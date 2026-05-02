@@ -34,3 +34,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE
+.idea/
+
+# kiro
+.kiro/
+skills-lock.json
+
+# playwright
+.playwright-mcp/

@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #1a1d23;
+  --bg-secondary: #22262e;
+  --bg-card: #2a2f38;
+  --bg-hover: #333842;
+  --text-primary: #e8eaed;
+  --text-secondary: #9aa0a9;
+  --text-muted: #6b7280;
+  --border-color: #333842;
+  --accent-blue: #4f8ff7;
+  --accent-green: #34d399;
+  --accent-purple: #a78bfa;
+  --accent-orange: #fb923c;
+  --accent-pink: #f472b6;
+  --accent-red: #f87171;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+@theme inline {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  --color-bg-hover: var(--bg-hover);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border-color: var(--border-color);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-green: var(--accent-green);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-red: var(--accent-red);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-hover) transparent;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
