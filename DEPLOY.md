@@ -33,7 +33,7 @@ cd next-build-test
 npm install
 
 # API URL 설정 (백엔드 주소에 맞게 변경)
-echo "NEXT_PUBLIC_API_URL=http://localhost:8080/api" > .env.local
+echo "NEXT_PUBLIC_API_URL=http://localhost:8080/api" > .env
 
 # 빌드
 npm run build
