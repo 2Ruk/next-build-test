@@ -8,7 +8,7 @@
 # 시스템 업데이트
 sudo dnf update -y
 
-# Node.js 18 설치
+# Node.js 설치 (dnf 기본 제공 버전)
 sudo dnf install -y nodejs
 
 # 버전 확인
@@ -16,16 +16,12 @@ node -v
 npm -v
 ```
 
-### Node.js 20+ 설치 (fnm 사용)
+> dnf 기본 버전이 낮을 경우, 아래 방법으로 Node.js 24 LTS를 설치하세요.
 
 ```bash
-# fnm 설치
-curl -fsSL https://fnm.vercel.app/install | bash
-source ~/.bashrc
-
-# Node.js 20 설치
-fnm install 20
-fnm use 20
+# NodeSource 저장소 추가 후 Node.js 24 LTS 설치
+curl -fsSL https://rpm.nodesource.com/setup_24.x | sudo bash -
+sudo dnf install -y nodejs
 
 node -v
 ```
@@ -68,7 +64,7 @@ EC2 콘솔에서 인바운드 규칙에 **TCP 3000** 포트를 추가하세요.
 
 ## 사전 요구사항
 
-- Node.js 18+
+- Node.js 24+ (LTS)
 - npm
 
 ## 로컬 개발
