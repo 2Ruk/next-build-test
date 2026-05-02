@@ -1,5 +1,71 @@
 # Kanban Board 배포 가이드
 
+## AWS Linux (EC2) 설치
+
+### Node.js 설치 (Amazon Linux 2023)
+
+```bash
+# 시스템 업데이트
+sudo dnf update -y
+
+# Node.js 18 설치
+sudo dnf install -y nodejs
+
+# 버전 확인
+node -v
+npm -v
+```
+
+### Node.js 20+ 설치 (fnm 사용)
+
+```bash
+# fnm 설치
+curl -fsSL https://fnm.vercel.app/install | bash
+source ~/.bashrc
+
+# Node.js 20 설치
+fnm install 20
+fnm use 20
+
+node -v
+```
+
+### Git 설치 & 프로젝트 클론
+
+```bash
+sudo dnf install -y git
+
+git clone https://github.com/2Ruk/next-build-test.git
+cd next-build-test
+```
+
+### 빌드 & 실행
+
+```bash
+# 의존성 설치
+npm install
+
+# API URL 설정 (백엔드 주소에 맞게 변경)
+echo "NEXT_PUBLIC_API_URL=http://localhost:8080/api" > .env.local
+
+# 빌드
+npm run build
+
+# 실행 (백그라운드)
+nohup npm start > app.log 2>&1 &
+
+# 로그 확인
+tail -f app.log
+```
+
+### 포트 열기 (보안 그룹)
+
+EC2 콘솔에서 인바운드 규칙에 **TCP 3000** 포트를 추가하세요.
+
+이후 `http://<EC2-퍼블릭-IP>:3000` 으로 접속 가능합니다.
+
+---
+
 ## 사전 요구사항
 
 - Node.js 18+
