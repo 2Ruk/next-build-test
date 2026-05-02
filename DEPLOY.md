@@ -2,34 +2,25 @@
 
 ## AWS Linux (EC2) 설치
 
-### Node.js 설치 (Amazon Linux 2023)
+### Node.js 설치 (Amazon Linux 2)
 
 ```bash
 # 시스템 업데이트
-sudo dnf update -y
+sudo yum update -y
 
-# Node.js 설치 (dnf 기본 제공 버전)
-sudo dnf install -y nodejs
+# NodeSource 저장소 추가 후 Node.js 24 LTS 설치
+curl -fsSL https://rpm.nodesource.com/setup_24.x | sudo bash -
+sudo yum install -y nodejs
 
 # 버전 확인
 node -v
 npm -v
 ```
 
-> dnf 기본 버전이 낮을 경우, 아래 방법으로 Node.js 24 LTS를 설치하세요.
-
-```bash
-# NodeSource 저장소 추가 후 Node.js 24 LTS 설치
-curl -fsSL https://rpm.nodesource.com/setup_24.x | sudo bash -
-sudo dnf install -y nodejs
-
-node -v
-```
-
 ### Git 설치 & 프로젝트 클론
 
 ```bash
-sudo dnf install -y git
+sudo yum install -y git
 
 git clone https://github.com/2Ruk/next-build-test.git
 cd next-build-test
